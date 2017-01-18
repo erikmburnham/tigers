@@ -1,0 +1,260 @@
+/*
+File Name: style.less
+Date: 5/30/2016
+Programmer: Erik Burnham
+*/
+
+/* MOBILE STYLESHEET */
+
+/* Color Palette */
+
+@import 'palette.less';
+  
+
+/* Other Decoration Declarations */
+
+@import 'mixins.less';
+@import 'elements.less';
+
+/* End Other Decoration Declarations */
+
+/* Parametric mixins for font attributes */
+
+.headerFontAttributes(@fontColor; @fontSize) {
+    color: @fontColor; 
+    
+    padding-top: 100px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* End parametric mixins for font attributes */
+
+/* Parametric mixins for box attributes */
+
+
+.roundedCornersAndBoxShadow(@borderRadius; @boxShadow){
+    border-radius: @borderRadius;
+    box-shadow: @boxShadow;
+    margin-top: 15px;
+    
+}
+
+/* End parametric mixins for box attributes */
+
+/* Parametric mixins for text-related selector attributes */
+
+
+.textDecorations(@fontColor; @fontFamily){
+    color: @fontColor;
+    font-family: @fontFamily;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 150%;
+}
+
+/* End parametric mixins for text-related selector attributes */
+
+    
+/* MOBILE STYLESHEET */
+
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    background-color: @lightColor;
+    color: @darkColor;
+    h2 {
+        font-weight: bold;
+        padding-bottom: 1em;
+    }
+    li{
+        display: inline;
+        margin-left: 10px;
+    }
+    
+}
+a {
+    text-decoration: none;
+    &:visited {
+        color: @color1;
+    }
+    &:hover {
+        font-style: italic;
+    }
+    }
+
+header {
+    .headerFontAttributes(@lightColor; 4em;);
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../images/tiger_eyes.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    h1 {
+        text-align: center;
+        font-size: 3em
+    }
+    
+}   
+    
+nav {
+    line-height: 1.5;
+    font-size: 1.25em;
+    background-color: @color2;
+    li{
+        display: block;
+        margin-left: 40%;
+        }
+    a {
+    &:link {
+        color: @lightColor;
+    }
+    &:visited {
+        color: @color1;
+    }
+    &:hover {
+        font-style: italic;
+    }
+       
+}
+}
+
+main {
+    h2 {
+        padding-top: 1em;
+        font-size: 2em;
+        text-align: center;
+    }
+    p{
+        padding: .5em;
+    }
+    img{
+        position: center;
+        width: 100%;
+    }
+    figcaption{
+        text-align: center;
+        font-size: .75em;
+        padding: .25em;
+        
+    }
+    }
+
+footer {
+    background-color: @color4;
+    h2 {
+        padding-top:1em;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a{
+       &:link {
+        color: @lightColor;
+    }
+    &:visited {
+        color: @darkColor;
+    }
+    &:hover {
+        font-style: italic;
+    }
+    }
+    
+}
+/*TABLET STYLESHEET
+
+The following CSS affects all screen sizes larger than 480 pixels wide.
+
+*/
+
+@media only screen and (min-width: 481px) {
+    header {
+        h1{
+        font-size: 5em;
+        padding-top: 2em;
+        padding-bottom: .5em;
+        }
+    }
+    nav{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        li{
+            margin-left: 17%;
+            font-size: 1.5em;
+            display: inline;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+    }
+    body{
+        figure{
+            img{
+                float:right;
+                width: 50%;
+                padding-left: 1em;
+                }
+            figcaption{
+                float: right;
+                width: 50%;
+                font-size: 1em;
+            }
+            
+        }
+        p{
+        padding: 2em;
+        line-height: 2;
+        }
+    }
+    
+    footer{
+        h2{
+            font-size: 1.5em;
+        }
+        width: 100%;
+        padding-top: 2em;
+        padding-bottom: 1em;
+        text-align: center;
+    }
+    
+}
+
+
+
+/*
+
+DESKTOP STYLESHEET
+
+The following CSS affects all screen sizes larger than 1024 pixels wide.
+
+*/
+
+    @media only screen and (min-width: 1025px) {
+        nav{
+            li{
+                margin-left: 20%
+            }
+        }
+        body{
+        margin-left: 10%;
+        margin-right: 10%;
+        figure{
+            img{
+                float:right;
+                width: 75%;
+                padding-left: 1em
+                }
+            figcaption{
+                float: right;
+                width: 75%;
+                font-size: 1em;
+            }
+            
+        }
+        p{
+        padding: 2em;
+        line-height: 2;
+    
+        }
+    }
+    }
